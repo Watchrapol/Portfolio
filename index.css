@@ -1,0 +1,275 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base */
+body {
+	background: #030014;
+	color: #fff;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 60px;
+	background: #0d0b1e;
+	position: sticky;   /* หรือใช้ position: fixed ก็ได้ */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo  {
+	font-size: 20px;
+	font-weight: bold;
+	background: linear-gradient(270deg, #8b5cf6, #6366f1, #3b82f6);
+	background-size: 600% 600%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes glow {
+	from {
+		text-shadow: 0 0 10px #8b5cf6;
+	}
+
+	to {
+		text-shadow: 0 0 25px #6366f1;
+	}
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 30px;
+}
+
+.nav-links a {
+	position: relative;
+	text-decoration: none;
+	color: #e5e7eb;
+	font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+	color: #fff;
+}
+
+.nav-links a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	height: 2px;
+	width: 0;
+	background: #8b5cf6;
+	transition: width .3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+	width: 100%;
+}
+
+/* ทำให้ navbar ติดบนสุด */
+.navbar{
+  position: sticky;   /* หรือใช้ position: fixed ก็ได้ */
+  top: 0;
+  z-index: 1000;
+}
+
+/* เพิ่มเงา/พรางพื้นหลังตอนมีการเลื่อนลง */
+body.scrolled .navbar{
+  background: #0d0b1ef0;       /* ใส่ความทึบเล็กน้อย */
+  backdrop-filter: blur(6px);   /* เบลอพื้นหลังสวย ๆ (รองรับเบราว์เซอร์ใหม่) */
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+
+/* กัน anchor โดน navbar บังตอนคลิกเมนู */
+section{ scroll-margin-top: 90px; }
+
+/* Hero */
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 80px 10%;
+	min-height: 100vh;
+	/* ไม่ต้องกำหนด background/color ซ้ำกับ body */
+}
+
+.hero-content {
+	flex: 1;
+	max-width: 50%;
+}
+
+.small-title {
+	font-size: 18px;
+	color: #8b5cf6;
+}
+
+.hero h1 {
+	font-size: 50px;
+	line-height: 1.2;
+}
+
+.gradient-text {
+	background: linear-gradient(90deg, #8b5cf6, #6366f1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.hero h3 {
+	font-size: 22px;
+	margin-top: 10px;
+	color: #a5b4fc;
+}
+
+/* Typing (ให้ชนะกฎ h3) */
+.hero .typing {
+	font-size: 28px;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: .15em solid #8b5cf6;
+	width: 0;
+	animation: typing 4s steps(30, end) forwards, blink .8s infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0
+	}
+
+	to {
+		width: 17ch
+	}
+}
+
+@keyframes blink {
+
+	0%,
+	100% {
+		border-color: transparent
+	}
+
+	50% {
+		border-color: #8b5cf6
+	}
+}
+
+.hero p {
+	margin: 20px 0;
+	line-height: 1.6;
+	color: #cbd5e1;
+}
+
+/* Skills */
+.skills {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+}
+
+.skills span {
+	background: #111827;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 14px;
+}
+
+/* Buttons (รวมเป็นสไตล์เดียว) */
+.buttons {
+	display: flex;
+	gap: 15px;
+}
+
+.btn {
+	background: transparent;
+	border: 2px solid #8b5cf6;
+	color: #fff;
+	padding: 12px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: .3s;
+}
+
+.btn:hover {
+	background: #8b5cf6;
+}
+
+/* Hero image */
+.hero-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.hero-image img {
+	width: 90%;
+	max-width: 400px;
+}
+
+/* ===== Page load reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(6px);
+  animation: fadeUp .8s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: var(--delay, 0s); /* ปรับดีเลย์รายชิ้นได้ */
+  will-change: opacity, transform, filter;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* สลับเป็นเลื่อนไปทางอื่น (เผื่ออยากใช้แตกต่างกันบ้าง) */
+.reveal-top   { transform: translateY(-16px); }
+.reveal-left  { transform: translateX(-24px); }
+.reveal-right { transform: translateX( 24px); }
+
+/* ปลอดภัยต่อผู้ใช้ที่ไม่ต้องการแอนิเมชัน */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-top,
+  .reveal-left,
+  .reveal-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+/* ================================ */
