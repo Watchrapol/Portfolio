@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watcharapol Front-End Web Developer</title>
 
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
     <link rel="stylesheet" href="index.css" />
-    <!-- เรียกไฟล์ JS แค่ครั้งเดียว ใช้ defer -->
     <script src="script.js" defer></script>
 </head>
 
@@ -18,7 +19,6 @@
             <ul class="nav-links">
                 <li class="reveal" style="--delay:.15s"><a href="#home" class="active">Home</a></li>
                 <li class="reveal" style="--delay:.2s"><a href="#about">About</a></li>
-                <!-- แก้ให้ตรงกับ id ด้านล่าง (projects) -->
                 <li class="reveal" style="--delay:.25s"><a href="#projects">Portfolio</a></li>
                 <li class="reveal" style="--delay:.3s"><a href="#contact">Contact</a></li>
             </ul>
@@ -51,7 +51,10 @@
         </div>
 
         <div class="hero-image reveal-right" style="--delay:.30s">
-            <img src="computer.png" alt="Frontend developer illustration" />
+            <div class="hero-lottie">
+                <dotlottie-wc src="https://lottie.host/262b5295-044a-41bc-beef-775da248c08f/A8k4eBKAf5.lottie"
+                    speed="1" autoplay loop></dotlottie-wc>
+            </div>
         </div>
     </section>
 
@@ -70,7 +73,6 @@
         <p class="muted">อีเมล: you@example.com · LinkedIn/GitHub</p>
     </section>
 
-    <!-- ย้าย footer เข้ามาใน body -->
     <footer>
         <p>&copy; 2025 Watcharapol</p>
     </footer>

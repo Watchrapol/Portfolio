@@ -197,6 +197,12 @@ body.scrolled .navbar {
 	display: flex;
 	justify-content: center;
 }
+.hero-image .hero-lottie{
+  display:block;
+  width:min(38vw, 900px);
+  height:auto;            /* ใช้คู่กับ aspect-ratio เพื่อให้เป็นสี่เหลี่ยมจัตุรัส */
+  aspect-ratio: 1 / 1;
+}
 
 /* ========== Typing (ครั้งเดียว) ========== */
 .typing {
