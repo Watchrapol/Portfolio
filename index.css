@@ -1,32 +1,50 @@
-/* Reset */
+/* ========== Reset & Base ========== */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* Base */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: #030014;
 	color: #fff;
-	font-family: "Poppins", sans-serif;
+	font-family: "Poppins", system-ui, Arial, sans-serif;
 }
 
-/* Navbar */
+section {
+	scroll-margin-top: 90px;
+}
+
+/* ให้ header ติดบนสุด */
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+/* ========== Navbar (sticky + active) ========== */
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 60px;
+	padding: 18px 60px;
 	background: #0d0b1e;
-	position: sticky;   /* หรือใช้ position: fixed ก็ได้ */
-  top: 0;
-  z-index: 1000;
+	transition: background .25s, box-shadow .25s, backdrop-filter .25s;
 }
 
-.logo  {
+body.scrolled .navbar {
+	background: #0d0b1ef0;
+	backdrop-filter: blur(6px);
+	box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+}
+
+.logo {
 	font-size: 20px;
-	font-weight: bold;
+	font-weight: 700;
+	/* Gradient + เคลื่อนไหว + Glow */
 	background: linear-gradient(270deg, #8b5cf6, #6366f1, #3b82f6);
 	background-size: 600% 600%;
 	background-clip: text;
@@ -38,32 +56,32 @@ body {
 
 @keyframes gradientMove {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 50%
 	}
 
 	50% {
-		background-position: 100% 50%;
+		background-position: 100% 50%
 	}
 
 	100% {
-		background-position: 0% 50%;
+		background-position: 0% 50%
 	}
 }
 
 @keyframes glow {
 	from {
-		text-shadow: 0 0 10px #8b5cf6;
+		text-shadow: 0 0 10px #8b5cf6
 	}
 
 	to {
-		text-shadow: 0 0 25px #6366f1;
+		text-shadow: 0 0 25px #6366f1
 	}
 }
 
 .nav-links {
 	list-style: none;
 	display: flex;
-	gap: 30px;
+	gap: 28px;
 }
 
 .nav-links a {
@@ -82,11 +100,11 @@ body {
 	content: "";
 	position: absolute;
 	left: 0;
-	bottom: -5px;
+	bottom: -6px;
 	height: 2px;
 	width: 0;
 	background: #8b5cf6;
-	transition: width .3s;
+	transition: width .25s;
 }
 
 .nav-links a:hover::after,
@@ -94,29 +112,19 @@ body {
 	width: 100%;
 }
 
-/* เพิ่มเงา/พรางพื้นหลังตอนมีการเลื่อนลง */
-body.scrolled .navbar{
-  background: #0d0b1ef0;       /* ใส่ความทึบเล็กน้อย */
-  backdrop-filter: blur(6px);   /* เบลอพื้นหลังสวย ๆ (รองรับเบราว์เซอร์ใหม่) */
-  box-shadow: 0 6px 24px rgba(0,0,0,.35);
-}
-
-/* กัน anchor โดน navbar บังตอนคลิกเมนู */
-section{ scroll-margin-top: 90px; }
-
-/* Hero */
+/* ========== Hero ========== */
 .hero {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 80px 10%;
+	gap: 40px;
+	padding: 80px 60px;
 	min-height: 100vh;
-	/* ไม่ต้องกำหนด background/color ซ้ำกับ body */
 }
 
 .hero-content {
 	flex: 1;
-	max-width: 50%;
+	max-width: 560px;
 }
 
 .small-title {
@@ -125,8 +133,9 @@ section{ scroll-margin-top: 90px; }
 }
 
 .hero h1 {
-	font-size: 50px;
-	line-height: 1.2;
+	font-size: 56px;
+	line-height: 1.15;
+	margin: .25rem 0 .5rem;
 }
 
 .gradient-text {
@@ -139,12 +148,58 @@ section{ scroll-margin-top: 90px; }
 
 .hero h3 {
 	font-size: 22px;
-	margin-top: 10px;
 	color: #a5b4fc;
+	margin: .2rem 0 1rem;
 }
 
-/* Typing (ให้ชนะกฎ h3) */
-.hero .typing {
+.hero p {
+	color: #cbd5e1;
+	line-height: 1.7;
+	margin: 16px 0 18px;
+}
+
+.skills {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin: 10px 0 20px;
+}
+
+.skills span {
+	background: #111827;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 14px;
+}
+
+.buttons {
+	display: flex;
+	gap: 14px;
+}
+
+.btn {
+	background: transparent;
+	border: 2px solid #8b5cf6;
+	color: #fff;
+	padding: 12px 20px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: .25s;
+}
+
+.btn:hover {
+	background: #8b5cf6;
+}
+
+.hero-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+/* ========== Typing (ครั้งเดียว) ========== */
+.typing {
 	font-size: 28px;
 	font-weight: 500;
 	white-space: nowrap;
@@ -160,10 +215,11 @@ section{ scroll-margin-top: 90px; }
 	}
 
 	to {
-		width: 17ch
+		width: 18ch
 	}
 }
 
+/* ปรับ ch ตามความยาวข้อความ */
 @keyframes blink {
 
 	0%,
@@ -176,93 +232,67 @@ section{ scroll-margin-top: 90px; }
 	}
 }
 
-.hero p {
-	margin: 20px 0;
-	line-height: 1.6;
-	color: #cbd5e1;
-}
-
-/* Skills */
-.skills {
-	display: flex;
-	gap: 10px;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
-}
-
-.skills span {
-	background: #111827;
-	padding: 6px 14px;
-	border-radius: 20px;
-	font-size: 14px;
-}
-
-/* Buttons (รวมเป็นสไตล์เดียว) */
-.buttons {
-	display: flex;
-	gap: 15px;
-}
-
-.btn {
-	background: transparent;
-	border: 2px solid #8b5cf6;
-	color: #fff;
-	padding: 12px 20px;
-	border-radius: 8px;
-	text-decoration: none;
-	font-weight: 500;
-	transition: .3s;
-}
-
-.btn:hover {
-	background: #8b5cf6;
-}
-
-/* Hero image */
-.hero-image {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-}
-
-.hero-image img {
-	width: 90%;
-	max-width: 400px;
-}
-
-/* ===== Page load reveal ===== */
+/* ========== Reveal on load/scroll ========== */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  filter: blur(6px);
-  animation: fadeUp .8s cubic-bezier(.22,.61,.36,1) forwards;
-  animation-delay: var(--delay, 0s); /* ปรับดีเลย์รายชิ้นได้ */
-  will-change: opacity, transform, filter;
+	opacity: 0;
+	transform: translateY(22px);
+	filter: blur(6px);
+	animation: fadeUp .75s cubic-bezier(.22, .61, .36, 1) forwards;
+	animation-delay: var(--delay, 0s);
+	will-change: opacity, transform, filter;
+}
+
+.reveal-right {
+	opacity: 0;
+	transform: translateX(24px);
+	filter: blur(6px);
+	animation: fadeRight .75s cubic-bezier(.22, .61, .36, 1) forwards;
+	animation-delay: var(--delay, 0s);
+	will-change: opacity, transform, filter;
 }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+	to {
+		opacity: 1;
+		transform: none;
+		filter: none
+	}
 }
 
-/* สลับเป็นเลื่อนไปทางอื่น (เผื่ออยากใช้แตกต่างกันบ้าง) */
-.reveal-top   { transform: translateY(-16px); }
-.reveal-left  { transform: translateX(-24px); }
-.reveal-right { transform: translateX( 24px); }
+@keyframes fadeRight {
+	to {
+		opacity: 1;
+		transform: none;
+		filter: none
+	}
+}
 
-/* ปลอดภัยต่อผู้ใช้ที่ไม่ต้องการแอนิเมชัน */
+/* ลดการเคลื่อนไหวสำหรับผู้ใช้ที่ตั้งค่าไว้ */
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-top,
-  .reveal-left,
-  .reveal-right {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
+
+	.reveal,
+	.reveal-right,
+	.typing {
+		animation: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+		filter: none !important;
+	}
 }
-/* ================================ */
+
+/* ========== Sections (ตัวอย่าง placeholder) ========== */
+.section {
+	padding: 90px 60px;
+	max-width: 1100px;
+	margin: auto;
+	color: #cbd5e1;
+}
+
+.section h2 {
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.muted {
+	color: #9aa3b2;
+}

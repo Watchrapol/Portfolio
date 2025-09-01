@@ -2,10 +2,12 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watcharapol Front-End Web Developer</title>
-    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" href="index.css" />
+    <!-- เรียกไฟล์ JS แค่ครั้งเดียว ใช้ defer -->
     <script src="script.js" defer></script>
 </head>
 
@@ -14,10 +16,11 @@
         <nav class="navbar">
             <div class="logo">AuyDev</div>
             <ul class="nav-links">
-                <li class="reveal" style="--delay: .15s"><a href="#home" class="active">Home</a></li>
-                <li class="reveal" style="--delay: .2s"><a href="#about">About</a></li>
-                <li class="reveal" style="--delay: .25s"><a href="#portfolio">Portfolio</a></li>
-                <li class="reveal" style="--delay: .3s"><a href="#contact">Contact</a></li>
+                <li class="reveal" style="--delay:.15s"><a href="#home" class="active">Home</a></li>
+                <li class="reveal" style="--delay:.2s"><a href="#about">About</a></li>
+                <!-- แก้ให้ตรงกับ id ด้านล่าง (projects) -->
+                <li class="reveal" style="--delay:.25s"><a href="#projects">Portfolio</a></li>
+                <li class="reveal" style="--delay:.3s"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,11 +28,9 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h2 class="small-title reveal" style="--delay:.15s">AuyDev</h2>
-            <h1 class="reveal" style="--delay:.22s">
-                <span class="gradient-text">Frontend</span> Developer
-            </h1>
-            <h3 class="typing">Frontend Developer<span
-                    class="cursor">|</span></h3>
+            <h1 class="reveal" style="--delay:.22s"><span class="gradient-text">Frontend</span> Developer</h1>
+
+            <h3 class="typing">Frontend Developer</h3>
             <p class="reveal" style="--delay:.34s">
                 My name is Watcharapol Mattayatsuk (Auy), a Front-End web developer with a degree in Electrical
                 Engineering from Kasetsart University, KU CSC. I am passionate about building clean, responsive, and
@@ -54,9 +55,25 @@
         </div>
     </section>
 
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p class="muted">ใส่รายละเอียดการศึกษา ประสบการณ์ และทักษะเพิ่มเติมของอุ้ยที่นี่…</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Portfolio</h2>
+        <p class="muted">ลิสต์โปรเจกต์ของอุ้ย พร้อมลิงก์ Live/Code</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p class="muted">อีเมล: you@example.com · LinkedIn/GitHub</p>
+    </section>
+
+    <!-- ย้าย footer เข้ามาใน body -->
+    <footer>
+        <p>&copy; 2025 Watcharapol</p>
+    </footer>
 </body>
-<footer>
-    <p>&copy; 2025 Watcharapol</p>
-</footer>
 
 </html>
