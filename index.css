@@ -94,13 +94,6 @@ body {
 	width: 100%;
 }
 
-/* ทำให้ navbar ติดบนสุด */
-.navbar{
-  position: sticky;   /* หรือใช้ position: fixed ก็ได้ */
-  top: 0;
-  z-index: 1000;
-}
-
 /* เพิ่มเงา/พรางพื้นหลังตอนมีการเลื่อนลง */
 body.scrolled .navbar{
   background: #0d0b1ef0;       /* ใส่ความทึบเล็กน้อย */
