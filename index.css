@@ -46,7 +46,7 @@ body.scrolled .navbar {
 	font-size: 20px;
 	font-weight: 700;
 	/* Gradient + เคลื่อนไหว + Glow */
-	background: linear-gradient(270deg, #8b5cf6, #6366f1, #3b82f6);
+	background: linear-gradient(270deg, #520cf5, #6366f1, #3b82f6);
 	background-size: 600% 600%;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -134,22 +134,23 @@ body.scrolled .navbar {
 }
 
 .hero h1 {
-	font-size: 56px;
+	font-size: 60px;
 	line-height: 1.15;
 	margin: .25rem 0 .5rem;
 }
 
 .gradient-text {
-	background: linear-gradient(90deg, #8b5cf6, #6366f1);
+	background: linear-gradient(270deg, #520cf5, #6366f1, #3b82f6);
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
 	-webkit-text-fill-color: transparent;
+	animation: gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
 }
 
 .hero h3 {
 	font-size: 22px;
-	color: #a5b4fc;
+	color: #4563f8;
 	margin: .2rem 0 1rem;
 }
 
@@ -180,7 +181,7 @@ body.scrolled .navbar {
 
 .btn {
 	background: transparent;
-	border: 2px solid #8b5cf6;
+	border: 2px solid #2f00ff;
 	color: #fff;
 	padding: 12px 20px;
 	border-radius: 10px;
@@ -190,7 +191,7 @@ body.scrolled .navbar {
 }
 
 .btn:hover {
-	background: #8b5cf6;
+	background: linear-gradient(270deg, #8b5cf6, #6366f1, #3b82f6);
 }
 
 .hero-image {
@@ -236,7 +237,7 @@ dotlottie-wc {
 	}
 
 	50% {
-		border-color: #8b5cf6
+		border-color: #4d05f5
 	}
 }
 
@@ -297,10 +298,17 @@ dotlottie-wc {
 }
 
 .section h2 {
-	color: #fff;
-	margin-bottom: 10px;
+	margin-bottom: 100px;
+	text-align: center;
+	font-size: 50px;
+}
+.section h1 {
+	font-size: 50px;
+	line-height: 1.15;
+	margin: .25rem 0 .5rem;
 }
 
 .muted {
 	color: #9aa3b2;
+	margin: .25rem 0 .5rem;
 }
