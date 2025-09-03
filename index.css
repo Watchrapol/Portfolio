@@ -242,73 +242,92 @@ dotlottie-wc {
 }
 
 /* ========== Reveal on load/scroll ========== */
-.reveal {
-	opacity: 0;
-	transform: translateY(22px);
-	filter: blur(6px);
-	animation: fadeUp .75s cubic-bezier(.22, .61, .36, 1) forwards;
-	animation-delay: var(--delay, 0s);
-	will-change: opacity, transform, filter;
+/* สภาพตั้งต้น */
+.reveal, .reveal-right{
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(22px);
+}
+.reveal-right{ transform: translateX(24px); }
+
+/* เล่นเมื่อมี .animate */
+.reveal.animate{
+  animation: fadeUp .75s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+.reveal-right.animate{
+  animation: fadeRight .75s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: var(--delay, 0s);
 }
 
-.reveal-right {
-	opacity: 0;
-	transform: translateX(24px);
-	filter: blur(6px);
-	animation: fadeRight .75s cubic-bezier(.22, .61, .36, 1) forwards;
-	animation-delay: var(--delay, 0s);
-	will-change: opacity, transform, filter;
-}
+@keyframes fadeUp{ to{ opacity:1; filter:none; transform:none; } }
+@keyframes fadeRight{ to{ opacity:1; filter:none; transform:none; } }
 
-@keyframes fadeUp {
-	to {
-		opacity: 1;
-		transform: none;
-		filter: none
-	}
-}
 
-@keyframes fadeRight {
-	to {
-		opacity: 1;
-		transform: none;
-		filter: none
-	}
-}
-
-/* ลดการเคลื่อนไหวสำหรับผู้ใช้ที่ตั้งค่าไว้ */
-@media (prefers-reduced-motion: reduce) {
-
-	.reveal,
-	.reveal-right,
-	.typing {
-		animation: none !important;
-		opacity: 1 !important;
-		transform: none !important;
-		filter: none !important;
-	}
-}
-
-/* ========== Sections (ตัวอย่าง placeholder) ========== */
-.section {
-	padding: 90px 60px;
-	max-width: 1100px;
-	margin: auto;
-	color: #cbd5e1;
-}
-
-.section h2 {
-	margin-bottom: 100px;
+.title-about {
+	margin-bottom: 0px;
 	text-align: center;
 	font-size: 50px;
+	padding-top: 1px;
+	/* เดิมทั้งหน้าใช้ 90px → ลดเฉพาะส่วน About */
+	padding-bottom: 1px;
+	/* เว้นล่างเท่าเดิม/ปรับได้ */
 }
-.section h1 {
+
+
+/* ========== Sections (ตัวอย่าง placeholder) ========== */
+.about {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	padding: 80px 200px;
+	min-height: 5vh;
+}
+
+.about-content {
+	flex: 1;
+	max-width: 610px;
+}
+
+.about h1 {
 	font-size: 50px;
 	line-height: 1.15;
 	margin: .25rem 0 .5rem;
 }
 
-.muted {
-	color: #9aa3b2;
-	margin: .25rem 0 .5rem;
+/*///////////////////////////////////////////////////////////////////////////////////*/
+/* กล่องหลัก */
+.mySwiper {
+	width: min(718px, 100vw);
+	height: 420px;
+	/* ปรับสูงตามการ์ด */
+	overflow: hidden;
+	/* ให้การ์ดที่ล้นออกมาโผล่ได้ */
+	margin-top: 0px;
+	/* ช่องว่างเล็กน้อยระหว่างข้อความกับสไลด์ */
+}
+
+/* การ์ดแต่ละใบ */
+.swiper-slide {
+	width: 250px;
+	/* ความกว้างการ์ด (สำคัญ!) */
+	height: 380px;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+	background: #222;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.swiper-slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	pointer-events: none;
+	user-select: none;
+	-webkit-user-drag: none;
 }
