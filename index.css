@@ -243,25 +243,43 @@ dotlottie-wc {
 
 /* ========== Reveal on load/scroll ========== */
 /* สภาพตั้งต้น */
-.reveal, .reveal-right{
-  opacity: 0;
-  filter: blur(6px);
-  transform: translateY(22px);
+.reveal,
+.reveal-right {
+	opacity: 0;
+	filter: blur(6px);
+	transform: translateY(22px);
 }
-.reveal-right{ transform: translateX(24px); }
+
+.reveal-right {
+	transform: translateX(24px);
+}
 
 /* เล่นเมื่อมี .animate */
-.reveal.animate{
-  animation: fadeUp .75s cubic-bezier(.22,.61,.36,1) forwards;
-  animation-delay: var(--delay, 0s);
-}
-.reveal-right.animate{
-  animation: fadeRight .75s cubic-bezier(.22,.61,.36,1) forwards;
-  animation-delay: var(--delay, 0s);
+.reveal.animate {
+	animation: fadeUp .75s cubic-bezier(.22, .61, .36, 1) forwards;
+	animation-delay: var(--delay, 0s);
 }
 
-@keyframes fadeUp{ to{ opacity:1; filter:none; transform:none; } }
-@keyframes fadeRight{ to{ opacity:1; filter:none; transform:none; } }
+.reveal-right.animate {
+	animation: fadeRight .75s cubic-bezier(.22, .61, .36, 1) forwards;
+	animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeUp {
+	to {
+		opacity: 1;
+		filter: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeRight {
+	to {
+		opacity: 1;
+		filter: none;
+		transform: none;
+	}
+}
 
 
 .title-about {
@@ -294,6 +312,14 @@ dotlottie-wc {
 	font-size: 50px;
 	line-height: 1.15;
 	margin: .25rem 0 .5rem;
+}
+
+.about p {
+	color: #cbd5e1;
+	line-height: 1.7;
+	margin: 16px 0 18px;
+
+
 }
 
 /*///////////////////////////////////////////////////////////////////////////////////*/
