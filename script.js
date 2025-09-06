@@ -40,32 +40,71 @@ const sw = new Swiper('.mySwiper', {
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 🔁 Restart animations for every section on enter
-// รีสตาร์ทอนิเมชันทุกครั้งที่ element เข้าจอ
 (() => {
-  const restart = (el) => { el.classList.remove('animate'); void el.offsetWidth; el.classList.add('animate'); };
+  const els = document.querySelectorAll('.rerun');
+  if (!els.length) return;
 
-  // 2.1 reveal/fade
-  const revEls = document.querySelectorAll('.reveal, .reveal-right');
-  const io1 = new IntersectionObserver(es => {
-    es.forEach(en => en.isIntersecting ? restart(en.target) : en.target.classList.remove('animate'));
-  }, { threshold: 0.2, rootMargin: '0px 0px -5% 0px' });
-  revEls.forEach(el => io1.observe(el));
+  const COOLDOWN = 800; // ms
+  const lastRun = new WeakMap();
+  const queue = new Set();
+  let scheduled = false;
 
-  // 2.2 typing effect (ถ้ามี)
-  const typEls = document.querySelectorAll('.typing');
-  const io2 = new IntersectionObserver(es => {
-    es.forEach(en => {
-      if (en.isIntersecting) { en.target.classList.remove('typing'); void en.target.offsetWidth; en.target.classList.add('typing'); }
+  const restart = (el) => {
+    el.style.animation = 'none';
+    // reflow เพื่อเริ่มรอบใหม่
+    void el.offsetWidth;
+    el.style.animation = '';
+  };
+
+  const scheduleRestart = (el) => {
+    // กันรีสตาร์ทถี่ ๆ ต่อ element
+    const t = Date.now();
+    if ((t - (lastRun.get(el) || 0)) < COOLDOWN) return;
+    lastRun.set(el, t);
+
+    queue.add(el);
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(() => {
+        queue.forEach(restart);
+        queue.clear();
+        scheduled = false;
+      });
+    }
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      const el = en.target;
+      const once = el.getAttribute('data-once') === 'true';
+      const on  = el.dataset.inview === '1';
+      const r   = en.intersectionRatio;
+
+      // เข้าเฟรม “มากพอ” ครั้งแรก → ค่อยเริ่ม
+      if (!on && r >= 0.60) {
+        scheduleRestart(el);
+        el.dataset.inview = '1';
+      }
+      // ออกจากเฟรมเกือบหมดจริง ๆ → เตรียมรอบใหม่ (ถ้าไม่ได้ตั้งเล่นครั้งเดียว)
+      else if (on && !once && r <= 0.05) {
+        el.style.animation = 'none';
+        el.dataset.inview = '0';
+      }
     });
-  }, { threshold: 0.2 });
-  typEls.forEach(el => io2.observe(el));
+  }, {
+    threshold: [0, 0.05, 0.6, 1],
+    // ลบส่วนบน ~80px เผื่อ navbar, และบัฟเฟอร์บน/ล่างกันเด้ง
+    rootMargin: '-80px 0px -20% 0px'
+  });
 
-  // 2.3 Lottie (ถ้าใช้)
-  const lotEls = document.querySelectorAll('lottie-player, dotlottie-wc');
-  const io3 = new IntersectionObserver(es => {
-    es.forEach(en => en.isIntersecting ? (en.target.play?.()) : (en.target.pause?.()));
-  }, { threshold: 0.1 });
-  lotEls.forEach(el => io3.observe(el));
+  els.forEach(el => { el.dataset.inview = '0'; io.observe(el); });
+
+  // เล่นรอบแรกให้ของที่อยู่ในจอหลังโหลด
+  window.addEventListener('load', () => {
+    els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const visible = r.top < innerHeight * 0.4 && r.bottom > innerHeight * 0.6;
+      if (visible) { scheduleRestart(el); el.dataset.inview = '1'; }
+    });
+  });
 })();
-
-

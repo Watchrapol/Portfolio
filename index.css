@@ -15,6 +15,13 @@ body {
 	font-family: "Poppins", system-ui, Arial, sans-serif;
 }
 
+body::after {
+	content: "";
+	display: block;
+	height: 160px;
+	/* ปรับได้ 80–160px */
+}
+
 section {
 	scroll-margin-top: 90px;
 }
@@ -52,7 +59,7 @@ body.scrolled .navbar {
 	-webkit-background-clip: text;
 	color: transparent;
 	-webkit-text-fill-color: transparent;
-	animation: gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
+	animation: slideRight .7s ease forwards, gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes gradientMove {
@@ -83,18 +90,13 @@ body.scrolled .navbar {
 	list-style: none;
 	display: flex;
 	gap: 28px;
+	animation: slideTop .7s ease forwards;
 }
 
 .nav-links a {
 	position: relative;
 	text-decoration: none;
-	color: #e5e7eb;
 	font-weight: 500;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-	color: #fff;
 }
 
 .nav-links a::after {
@@ -104,7 +106,7 @@ body.scrolled .navbar {
 	bottom: -6px;
 	height: 2px;
 	width: 0;
-	background: #8b5cf6;
+	background: #2f00ff;
 	transition: width .25s;
 }
 
@@ -137,6 +139,11 @@ body.scrolled .navbar {
 	font-size: 60px;
 	line-height: 1.15;
 	margin: .25rem 0 .5rem;
+	animation: slideLeft 1.3s ease forwards;
+}
+
+.hero h2 {
+	animation: slideTop 1s ease forwards;
 }
 
 .gradient-text {
@@ -158,6 +165,9 @@ body.scrolled .navbar {
 	color: #cbd5e1;
 	line-height: 1.7;
 	margin: 16px 0 18px;
+	animation: slideBottom 1.6s ease forwards;
+
+
 }
 
 .skills {
@@ -165,6 +175,7 @@ body.scrolled .navbar {
 	gap: 10px;
 	flex-wrap: wrap;
 	margin: 10px 0 20px;
+	animation: slideRight 1.9s ease forwards;
 }
 
 .skills span {
@@ -177,27 +188,29 @@ body.scrolled .navbar {
 .buttons {
 	display: flex;
 	gap: 14px;
+	animation: slideRight 1.9s ease forwards;
 }
 
 .btn {
 	background: transparent;
-	border: 2px solid #2f00ff;
+	border: 1px solid #2f00ff;
 	color: #fff;
 	padding: 12px 20px;
-	border-radius: 10px;
+	border-radius: 50px;
 	text-decoration: none;
 	font-weight: 500;
 	transition: .25s;
 }
 
 .btn:hover {
-	background: linear-gradient(270deg, #8b5cf6, #6366f1, #3b82f6);
+	box-shadow: 0 0 5px #2f00ff, 0 0 25px #2f00ff, 0 0 50px #2f00ff, 0 0 100px #2f00ff, 0 0 200px #2f00ff
 }
 
 .hero-image {
 	flex: 1;
 	display: flex;
 	justify-content: center;
+	animation: slideBottom 1s ease forwards;
 }
 
 dotlottie-wc {
@@ -213,7 +226,7 @@ dotlottie-wc {
 	font-weight: 500;
 	white-space: nowrap;
 	overflow: hidden;
-	border-right: .15em solid #8b5cf6;
+	border-right: .15em solid #010ec4;
 	width: 0;
 	animation: typing 4s steps(30, end) forwards, blink .8s infinite;
 }
@@ -237,63 +250,21 @@ dotlottie-wc {
 	}
 
 	50% {
-		border-color: #4d05f5
+		border-color: #3f00d1
 	}
 }
 
-/* ========== Reveal on load/scroll ========== */
-/* สภาพตั้งต้น */
-.reveal,
-.reveal-right {
-	opacity: 0;
-	filter: blur(6px);
-	transform: translateY(22px);
-}
-
-.reveal-right {
-	transform: translateX(24px);
-}
-
-/* เล่นเมื่อมี .animate */
-.reveal.animate {
-	animation: fadeUp .75s cubic-bezier(.22, .61, .36, 1) forwards;
-	animation-delay: var(--delay, 0s);
-}
-
-.reveal-right.animate {
-	animation: fadeRight .75s cubic-bezier(.22, .61, .36, 1) forwards;
-	animation-delay: var(--delay, 0s);
-}
-
-@keyframes fadeUp {
-	to {
-		opacity: 1;
-		filter: none;
-		transform: none;
-	}
-}
-
-@keyframes fadeRight {
-	to {
-		opacity: 1;
-		filter: none;
-		transform: none;
-	}
-}
-
+/*//////////////////////////////////////////////////////////////////////*/
 
 .title-about {
 	margin-bottom: 0px;
 	text-align: center;
-	font-size: 50px;
+	font-size: 46px;
 	padding-top: 1px;
-	/* เดิมทั้งหน้าใช้ 90px → ลดเฉพาะส่วน About */
 	padding-bottom: 1px;
-	/* เว้นล่างเท่าเดิม/ปรับได้ */
+	animation: slideBottom 1s ease forwards;
 }
 
-
-/* ========== Sections (ตัวอย่าง placeholder) ========== */
 .about {
 	display: flex;
 	align-items: center;
@@ -312,14 +283,37 @@ dotlottie-wc {
 	font-size: 50px;
 	line-height: 1.15;
 	margin: .25rem 0 .5rem;
+	animation: slideTop 1s ease forwards;
 }
-
-.about p {
+.about-p1 {
 	color: #cbd5e1;
 	line-height: 1.7;
 	margin: 16px 0 18px;
+	animation: slideLeft 1.2s ease forwards;
+}
 
+.about-p2 {
+	color: #cbd5e1;
+	line-height: 1.7;
+	margin: 16px 0 18px;
+	animation: slideRight 1.4s ease forwards;
+}
 
+.about-p3 {
+	color: #cbd5e1;
+	line-height: 1.7;
+	margin: 16px 0 18px;
+	animation: slideBottom 1.4s ease forwards;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+.title-projects {
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 46px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	animation: slideTop 1s ease forwards;
 }
 
 /*///////////////////////////////////////////////////////////////////////////////////*/
@@ -332,6 +326,7 @@ dotlottie-wc {
 	/* ให้การ์ดที่ล้นออกมาโผล่ได้ */
 	margin-top: 0px;
 	/* ช่องว่างเล็กน้อยระหว่างข้อความกับสไลด์ */
+	animation: slideLeft 1.6s ease forwards;
 }
 
 /* การ์ดแต่ละใบ */
@@ -356,4 +351,68 @@ dotlottie-wc {
 	pointer-events: none;
 	user-select: none;
 	-webkit-user-drag: none;
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+		filter: blur(6px)
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+		filter: none
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(100px);
+		opacity: 0;
+		filter: blur(6px)
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+		filter: none
+	}
+}
+
+@keyframes slideTop {
+	0% {
+		transform: translateY(-100px);
+		opacity: 0;
+		filter: blur(6px)
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		filter: none
+	}
+}
+
+@keyframes slideBottom {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+		filter: blur(6px)
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		filter: none
+	}
+}
+
+/* ให้เบราว์เซอร์เตรียมเลเยอร์เรนเดอร์ */
+.rerun {
+	will-change: transform, opacity;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	/* สร้าง compositor layer */
 }

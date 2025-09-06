@@ -9,6 +9,9 @@
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="index.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -17,13 +20,10 @@
         <nav class="navbar">
             <div class="logo">AuyDev</div>
             <ul class="nav-links">
-                <li class="reveal" style="--delay:.15s"><a href="#home" class="active"><span
-                            class="gradient-text">Home</span></a></li>
-                <li class="reveal" style="--delay:.2s"><a href="#about"><span class="gradient-text">About</span></a>
-                </li>
-                <li class="reveal" style="--delay:.25s"><a href="#projects"><span
-                            class="gradient-text">Portfolio</span></a></li>
-                <li class="reveal" style="--delay:.3s"><a href="#contact"><span class="gradient-text">Contact</span></a>
+                <li><a href="#home" class="active"><span class="gradient-text">Home</span></a></li>
+                <li><a href="#about"><span class="gradient-text">About</span></a></li>
+                <li><a href="#projects"><span class="gradient-text">Portfolio</span></a></li>
+                <li><a href="#contact"><span class="gradient-text">Contact</span></a>
                 </li>
             </ul>
         </nav>
@@ -31,67 +31,77 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h2 class="small-title reveal" style="--delay:.15s"><span class="gradient-text">AuyDev</span></h2>
-            <h1 class="reveal" style="--delay:.22s"><span class="gradient-text">Frontend</span> Developer</h1>
+            <h2 class="rerun"><span class="gradient-text rerun">AuyDev</span></h2>
+            <h1 class="rerun"><span class="gradient-text rerun">Frontend</span> Developer</h1>
 
-            <h3 class="typing">Frontend Developer</h3>
-            <p class="reveal" style="--delay:.34s">
+            <h3 class="typing rerun">Frontend Developer</h3>
+            <p class="rerun">
                 I’m <strong>Watcharapol “Auy” Mattayatsuk</strong>, a front-end developer with a degree in Electrical
                 Engineering from
                 <strong>Kasetsart University (KU CSC)</strong>. I build clean, responsive, and accessible websites that
                 solve real-world problems.
             </p>
 
-            <div class="skills">
-                <span class="reveal" style="--delay:.40s">HTML</span>
-                <span class="reveal" style="--delay:.44s">JavaScript</span>
-                <span class="reveal" style="--delay:.48s">CSS</span>
-                <span class="reveal" style="--delay:.52s">PYTHON</span>
+            <div class="skills rerun">
+                <span>HTML</span>
+                <span>JavaScript</span>
+                <span>CSS</span>
+                <span>PYTHON</span>
             </div>
 
-            <div class="buttons">
-                <a href="#projects" class="btn reveal" style="--delay:.58s">Projects</a>
-                <a href="#contact" class="btn reveal" style="--delay:.64s">Contact</a>
+            <div class="buttons rerun">
+                <a href="#projects" class="btn">Projects</a>
+                <a href="#contact" class="btn">Contact</a>
             </div>
         </div>
 
-        <div class="hero-image reveal-right" style="--delay:.30s">
+        <div class="hero-image rerun">
             <dotlottie-wc src="https://lottie.host/262b5295-044a-41bc-beef-775da248c08f/A8k4eBKAf5.lottie" speed="1"
                 autoplay loop></dotlottie-wc>
         </div>
     </section>
 
-    <section class="title-about" id="about">
-        <h1 class ="reveal" style ="--delay:.22s"></h1class><span class="gradient-text">About Me</span></h1>
-    </section>
 
-    <section class="about" id="about">
+    <h1 class="sub-title rerun" id="about">About<span class="gradient-text">Me</span></h1>
+    <section class="about">
         <div class="about-content">
-            <h1 class="reveal" style="--delay:.34s"><span class="gradient-text">Hello,I'm</span> <br>Watcharapol
+            <h1 class="rerun"><span class="gradient-text">Hello,I'm</span><br>Watcharapol
                 Mattayatsuk</h1>
-            <p class="reveal" style="--delay:.40s">
-                I’m <strong>Auy Watcharapol Mattayatsuk</strong>, a <strong>front-end developer</strong> passionate
-                about the web.
-                For me, code isn’t just pages—it’s about crafting <strong>meaningful experiences</strong> that connect
-                people.
-            </p>
-
-            <p class="reveal" style="--delay:.46s">
-                I work end-to-end: researching needs, designing <strong>intuitive, accessible UIs</strong>, and
-                <strong>collaborating on APIs</strong>. When needed, I also build <strong>efficient, scalable back-end
-                    systems</strong>
-                to ship fast, reliable products.
-            </p>
-
-            <p class="reveal" style="--delay:.52s">
-                I keep learning and refining my craft—<strong>performance</strong>, <strong>a11y</strong>,
-                and <strong>clean architecture</strong>. My goal is to deliver work that meets requirements, provides
-                real value, and lasts.
-            </p>
+            <div class="about-p1 rerun">
+                <p>
+                    I’m <strong>Auy Watcharapol Mattayatsuk</strong>, a <strong>front-end developer</strong> passionate
+                    about the web.
+                    For me, code isn’t just pages—it’s about crafting <strong>meaningful experiences</strong> that
+                    connect
+                    people.
+                </p>
+            </div>
+            <div class="about-p2 rerun">
+                <p>
+                    I work end-to-end: researching needs, designing <strong>intuitive, accessible UIs</strong>, and
+                    <strong>collaborating on APIs</strong>. When needed, I also build <strong>efficient, scalable
+                        back-end
+                        systems</strong>
+                    to ship fast, reliable products.
+                </p>
+            </div>
+            <div class="about-p3 rerun">
+                <p>
+                    I keep learning and refining my craft—<strong>performance</strong>, <strong>a11y</strong>,
+                    and <strong>clean architecture</strong>. My goal is to deliver work that meets requirements,
+                    provides
+                    real value, and lasts.
+                </p>
+            </div>
+            <div class="buttons rerun">
+                <a href="View GitHub" class="btn">View GitHub</a>
+                <a href="View Projects" class="btn"><i class="bx bx-code-alt"></i> View Projects
+                </a>
+            </div>
         </div>
 
         <section class="center-stage">
-            <div class="swiper mySwiper reveal-right" style="--delay:.30s">
+            <div class="swiper mySwiper rerun">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="images/1.jpg" alt="1"></div>
                     <div class="swiper-slide"><img src="images/2.jpg" alt="2"></div>
@@ -108,23 +118,187 @@
             </div>
         </section>
     </section>
+    <section class="bx">
+        <div class="about-list rerun">
+            <!-- Card 1 -->
+            <div class="about-card">
+                <i class="bx bxs-graduation"></i>
+                <h2>Education Background & Work Experience</h2>
 
-    <section id="projects" class="section">
-        <h2><span class="gradient-text">Portfolio></span></h2>
-        <p class="muted">ลิสต์โปรเจกต์ของอุ้ย พร้อมลิงก์ Live/Code</p>
+                <p class="about-desc">
+                    Bachelor’s Degree in Electrical Engineering, Kasetsart University (2015–2019)
+                    · Office Staff, Winner Agro Innovation Co., Ltd. (2024–2025)
+                </p>
+
+                <details class="disclosure">
+                    <summary class="btn-EB">
+                        <span class="label-more">Read more</span>
+                        <span class="label-less">Read less</span>
+                    </summary>
+                    <div class="more-body">
+                        <p>
+                            <strong>Education</strong><br>
+                            • 2015–2019: Bachelor’s Degree in Electrical Engineering, Kasetsart University,
+                            Chalermphrakiat Sakon Nakhon Campus<br>
+                            • 2012–2015: High School (Science–Mathematics), Phang Khon Witthayakhom School<br>
+                            • 2010–2012: Lower Secondary School, Phang Khon Witthayakhom School
+                        </p>
+                        <p>
+                            <strong>Work Experience</strong><br>
+                            • 2024–2025: Office Staff, Winner Agro Innovation Co., Ltd.<br>
+                            • 2020–2024: School Manager, Udomjitwittaya School<br>
+                            • 2019–2020: Educational Personnel, Udomjitwittaya School
+                        </p>
+                    </div>
+                </details>
+            </div>
+            <!-- Card 2 -->
+            <div class="about-card">
+                <i class="bx bxs-badge-check"></i>
+                <h2>Certificates</h2>
+                <p class="about-desc">Selected certifications and achievements.</p>
+                <details class="disclosure">
+                    <summary class="btn-EB">
+                        <span class="label-more">Read more</span>
+                        <span class="label-less">Read less</span>
+                    </summary>
+                    <div class="more-body">
+                        <p>
+                            <strong>Certificates</strong><br>
+                            • borntodev certificate - JavaScript<br>
+                            • borntodev certificate - ChatGPT for Developers<br>
+                            • borntodev certificate - Introduction to ComputerScience<br>
+                            • borntodev certificate - Lite Fundamental Web Dev with HTML5&CSS3<br>
+                        </p>
+                    </div>
+                </details>
+            </div>
+            <!-- Card 3 -->
+            <div class="about-card">
+                <i class="bx bx-code-alt"></i>
+                <h2>Projects</h2>
+                <p class="about-desc">Recent work and case studies.</p>
+                <details class="disclosure">
+                    <summary class="btn-EB">
+                        <span class="label-more">Read more</span>
+                        <span class="label-less">Read less</span>
+                    </summary>
+                    <div class="more-body">
+                        <ul>
+                            <p><strong>Web Development Projects</strong></p>
+                            <a href="https://watchrapol.github.io/Sloth_Bar/">
+                                <li>Sloth Bar
+                            </a></li>
+                            <a href="https://sites.google.com/ku.th/watcharapol-m">
+                                <li>Portfolio sittes.google
+                            </a></li>
+                            <li>Project C —</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2><span class="gradient-text">Contact</span></h2>
+    <h1 class="sub-title rerun">My<span class="gradient-text"> skills</span></h1>
+    <section>
+        <div class="container-skills">
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Tecnical-bars">
+                <div class="bar"><i class="bx bxl-html5"></i>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                    <div class="progress-line html rerun">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-css3"></i>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                    <div class="progress-line css rerun">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-javascript"></i>
+                    <div class="info">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="progress-line javaScript rerun">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-python"></i>
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-line python rerun">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-skills">
+            <h1 class="heading1">Professinal Skills</h1>
+            <div class="radial-bars">
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar rerun" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1 rerun" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">creativity</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar rerun" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-2 rerun" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Communication</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar rerun" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-3 rerun" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar rerun" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-4 rerun" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">TeamWork</div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <h1 class="sub-title rerun" id="projects">My<span class="gradient-text">Portfolio</span></h1>
+
+    <h1 class="sub-title rerun" id="contact">My<span class="gradient-text">Contact</span></h1>
+    <div>
         <p class="muted">อีเมล: you@example.com · LinkedIn/GitHub</p>
-    </section>
+    </div>
+
+
+
+
+
 
     <footer>
         <p>&copy; 2025 Watcharapol</p>
     </footer>
 
-
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </body>
 
 </html>
