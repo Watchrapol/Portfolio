@@ -1038,3 +1038,63 @@ dotlottie-wc {
 	transform: translateZ(0);
 	/* สร้าง compositor layer */
 }
+/* เฉพาะกฎซ่อน/โชว์ภาษา + สไตล์ปุ่ม toggle ให้เข้าธีม */
+/* ซ่อนอีกภาษาตามค่าบน <body data-lang="..."> */
+body[data-lang="th"] .en { display: none !important; visibility: hidden; }
+body[data-lang="en"] .th { display: none !important; visibility: hidden; }
+
+/* ปุ่มสลับภาษา (ใช้ได้ทั้งใน/นอก .nav-links) */
+.lang-toggle{
+  appearance:none; -webkit-appearance:none;
+  background: transparent; color:#fff;
+  border:1px solid #2f00ff;
+  padding:8px 14px; border-radius:999px;
+  font-weight:600; font-size:13px; line-height:1;
+  display:inline-flex; align-items:center; gap:8px;
+  cursor:pointer;
+  transition: box-shadow .25s, border-color .25s, background .25s;
+}
+.lang-toggle:hover{
+  box-shadow: 0 0 5px #2f00ff, 0 0 25px #2f00ff, 0 0 50px #2f00ff;
+}
+.lang-toggle:focus-visible{
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* เวอร์ชันสองช่อง + มี knob เลื่อนไฮไลต์ */
+.lang-toggle.segmented{
+  position:relative; padding:6px; gap:12px; min-width:92px;
+}
+.lang-toggle.segmented .opt{
+  position:relative; z-index:1;
+  padding:6px 10px; border-radius:999px;
+  font-weight:600; font-size:12px; opacity:.7;
+}
+/* เน้นตัวเลือกปัจจุบัน */
+body[data-lang="th"] .lang-toggle.segmented .opt.th,
+body[data-lang="en"] .lang-toggle.segmented .opt.en{
+  opacity:1; color:#fff;
+}
+/* แท่ง knob ใต้ตัวอักษร */
+.lang-toggle.segmented::before{
+  content:"";
+  position:absolute; inset:4px auto 4px 4px;
+  width: calc(50% - 4px); border-radius:999px;
+  background: linear-gradient(270deg, #520cf5, #6366f1, #3b82f6);
+  filter: drop-shadow(0 0 10px rgba(99,102,241,.35));
+  transition: transform .25s ease;
+}
+body[data-lang="en"] .lang-toggle.segmented::before{
+  transform: translateX(100%);
+}
+
+/* ทำให้ปุ่มกลืนกับลิงก์เมนูถ้าวางใน .nav-links */
+.nav-links button.lang-toggle{
+  background: transparent; color:#e5e7eb; border-color:#2f00ff;
+}
+
+/* ลดการเคลื่อนไหวหากผู้ใช้ตั้งค่าไว้ */
+@media (prefers-reduced-motion: reduce){
+  .lang-toggle.segmented::before{ transition: none; }
+}

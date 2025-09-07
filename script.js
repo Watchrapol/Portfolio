@@ -21,22 +21,22 @@ sections.forEach(sec => io.observe(sec));
 
 ///////////////////////////////////////////////////////////////////////////////about-card///////////////////////////////////////////////
 const sw = new Swiper('.mySwiper', {
-    loop: true,
-    centeredSlides: true,        // การ์ดกลางอยู่ตรงกลาง
-    slidesPerView: 'auto',       // ใช้ความกว้างจาก CSS ของ .swiper-slide
-    spaceBetween: 24,            // ระยะห่างการ์ด
-    grabCursor: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-        rotate: 0,                 // หมุนข้าง ๆ (0 = ไม่หมุน)
-        stretch: 0,                // ยืดเข้าออก
-        depth: 120,                // ระยะลึก (perspective)
-        modifier: 1,
-        slideShadows: false
-    },
-    autoplay: { delay: 3000, disableOnInteraction: false },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    pagination: { el: '.swiper-pagination', clickable: true },
+  loop: true,
+  centeredSlides: true,        // การ์ดกลางอยู่ตรงกลาง
+  slidesPerView: 'auto',       // ใช้ความกว้างจาก CSS ของ .swiper-slide
+  spaceBetween: 24,            // ระยะห่างการ์ด
+  grabCursor: true,
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 0,                 // หมุนข้าง ๆ (0 = ไม่หมุน)
+    stretch: 0,                // ยืดเข้าออก
+    depth: 120,                // ระยะลึก (perspective)
+    modifier: 1,
+    slideShadows: false
+  },
+  autoplay: { delay: 3000, disableOnInteraction: false },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  pagination: { el: '.swiper-pagination', clickable: true },
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 🔁 Restart animations for every section on enter
@@ -77,8 +77,8 @@ const sw = new Swiper('.mySwiper', {
     entries.forEach(en => {
       const el = en.target;
       const once = el.getAttribute('data-once') === 'true';
-      const on  = el.dataset.inview === '1';
-      const r   = en.intersectionRatio;
+      const on = el.dataset.inview === '1';
+      const r = en.intersectionRatio;
 
       // เข้าเฟรม “มากพอ” ครั้งแรก → ค่อยเริ่ม
       if (!on && r >= 0.60) {
@@ -113,15 +113,15 @@ const sw = new Swiper('.mySwiper', {
 // ===== Copy email =====
 document.querySelectorAll('.copy-email').forEach(btn => {
   btn.addEventListener('click', async () => {
-    const email = btn.dataset.copy || 'you@example.com';
-    try{
+    const email = btn.dataset.copy || 'watcharapol.m@ku.th';
+    try {
       await navigator.clipboard.writeText(email);
       const prev = btn.textContent;
       btn.textContent = 'Copied!';
-      setTimeout(()=> btn.textContent = prev, 1200);
-    }catch(e){
+      setTimeout(() => btn.textContent = prev, 1200);
+    } catch (e) {
       btn.textContent = 'Copy failed';
-      setTimeout(()=> btn.textContent = 'Copy', 1200);
+      setTimeout(() => btn.textContent = 'Copy', 1200);
     }
   });
 });
@@ -134,7 +134,7 @@ document.getElementById('mailtoBtn')?.addEventListener('click', () => {
   const message = encodeURIComponent(document.getElementById('message').value.trim());
 
   const body = `From: ${name} (${email})%0A%0A${message}`;
-  const mailto = `mailto:you@example.com?subject=${subject}&body=${body}`;
+  const mailto = `mailto:watcharapol.m@ku.th?subject=${subject}&body=${body}`;
   window.location.href = mailto;
 });
 
@@ -148,7 +148,7 @@ if (contactForm) {
     formStatus.textContent = 'Sending...';
 
     const formData = new FormData(contactForm);
-    try{
+    try {
       const res = await fetch(contactForm.action, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
@@ -160,8 +160,17 @@ if (contactForm) {
       } else {
         formStatus.textContent = 'ส่งไม่สำเร็จ ลองส่งผ่านอีเมลแทนได้ครับ';
       }
-    }catch(err){
+    } catch (err) {
       formStatus.textContent = 'เครือข่ายมีปัญหา ลองอีกครั้งหรือส่งอีเมลแทน';
     }
   });
 }
+/*//////////////สลับภาษา//////////////////*/
+const root = document.body;
+const saved = localStorage.getItem('lang') || 'th';
+root.dataset.lang = saved;
+
+document.getElementById('langToggle')?.addEventListener('click', () => {
+  root.dataset.lang = root.dataset.lang === 'th' ? 'en' : 'th';
+  localStorage.setItem('lang', root.dataset.lang);
+});

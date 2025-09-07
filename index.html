@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="index.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
+
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
@@ -23,7 +24,12 @@
                 <li><a href="#home" class="active"><span class="gradient-text">Home</span></a></li>
                 <li><a href="#about"><span class="gradient-text">About</span></a></li>
                 <li><a href="#projects"><span class="gradient-text">Portfolio</span></a></li>
-                <li><a href="#contact"><span class="gradient-text">Contact</span></a>
+                <li><a href="#contact"><span class="gradient-text">Contact</span></a></li>
+                <li>
+                    <button id="langToggle" class="lang-toggle segmented" aria-label="Switch language"
+                        aria-pressed="false">
+                        <span class="opt th">TH</span><span class="opt en">EN</span>
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -34,9 +40,16 @@
             <h2 class="rerun"><span class="gradient-text rerun">AuyDev</span></h2>
             <h1 class="rerun"><span class="gradient-text rerun">Frontend</span> Developer</h1>
 
-            <h3 class="typing rerun">Frontend Developer</h3>
-            <p class="rerun">
-                I’m <strong>Watcharapol “Auy” Mattayatsuk</strong>, a front-end developer with a degree in Electrical
+
+            <h3 class="typing th rerun">นักพัฒนา Front-End</h3>
+            <h3 class="typing en rerun">Frontend Developer</h3>
+            <p class="th rerun">
+                ผมชื่อ <strong>วัชระพล มัธยัสถ์สุข “อุ้ย” </strong> เป็นนักพัฒนาเว็บสาย Front-End
+                จบปริญญาตรีสาขาวิศวกรรมไฟฟ้า จาก <strong>มหาวิทยาลัยเกษตรศาสตร์ (KU CSC)</strong>
+                ผมสร้างเว็บไซต์ที่สะอาด ตอบสนองได้ดี และเข้าถึงได้สำหรับทุกคน เพื่อแก้ปัญหาในโลกความเป็นจริง.
+            </p>
+            <p class="en rerun">
+                I’m <strong>Watcharapol Mattayatsuk “Auy” </strong>, a front-end developer with a degree in Electrical
                 Engineering from
                 <strong>Kasetsart University (KU CSC)</strong>. I build clean, responsive, and accessible websites that
                 solve real-world problems.
@@ -46,7 +59,7 @@
                 <span>HTML</span>
                 <span>JavaScript</span>
                 <span>CSS</span>
-                <span>PYTHON</span>
+                <span>Python</span>
             </div>
 
             <div class="buttons rerun">
@@ -66,8 +79,13 @@
         <div class="about-content">
             <h1 class="rerun"><span class="gradient-text">Hello,I'm</span><br>Watcharapol
                 Mattayatsuk</h1>
+
             <div class="about-p1 rerun">
-                <p>
+                <p class="about-p1 th">ผมชื่อ <strong>วัชระพล มัธยัสถ์สุข “อุ้ย” </strong> เป็น<strong>นักพัฒนาเว็บสาย
+                        Front-End</strong>ที่หลงใหลในโลกของเว็บ สำหรับผม
+                    โค้ดไม่ใช่แค่หน้าเว็บ—แต่คือการสร้างสรรค์<strong>ประสบการณ์ที่มีความหมาย</strong>ซึ่งเชื่อมโยงผู้คนเข้าหากัน.
+                </p>
+                <p class="about-p1 en">
                     I’m <strong>Auy Watcharapol Mattayatsuk</strong>, a <strong>front-end developer</strong> passionate
                     about the web.
                     For me, code isn’t just pages—it’s about crafting <strong>meaningful experiences</strong> that
@@ -76,7 +94,11 @@
                 </p>
             </div>
             <div class="about-p2 rerun">
-                <p>
+                <p class="about-p2 th">ผมทำงานแบบครบวงจร ตั้งแต่สำรวจความต้องการ ออกแบบ<strong> UI
+                        ที่ใช้งานง่ายและเข้าถึงได้</strong> ไปจนถึง<strong>ทำงานร่วมกันด้าน API</strong> และเมื่อจำเป็น
+                    ผมยังพัฒนา<strong>ระบบแบ็กเอนด์ที่มีประสิทธิภาพและขยายขนาดได้</strong>
+                    เพื่อส่งมอบผลิตภัณฑ์ที่รวดเร็วและเชื่อถือได้.</p>
+                <p class="about-p2 en">
                     I work end-to-end: researching needs, designing <strong>intuitive, accessible UIs</strong>, and
                     <strong>collaborating on APIs</strong>. When needed, I also build <strong>efficient, scalable
                         back-end
@@ -85,7 +107,11 @@
                 </p>
             </div>
             <div class="about-p3 rerun">
-                <p>
+                <p class="about-p3 th">ผมเรียนรู้อยู่เสมอ และขัดเกลาฝีมือด้าน<strong> ประสิทธิภาพ</strong>,
+                    <strong>การเข้าถึง (a11y)</strong> และ<strong>สถาปัตยกรรมที่สะอาด</strong>
+                    เป้าหมายของผมคือส่งมอบงานที่ตรงตามความต้องการ ให้คุณค่าอย่างแท้จริง และคงทนใช้งานได้ยาวนาน.
+                </p>
+                <p class="about-p3 en">
                     I keep learning and refining my craft—<strong>performance</strong>, <strong>a11y</strong>,
                     and <strong>clean architecture</strong>. My goal is to deliver work that meets requirements,
                     provides
@@ -124,9 +150,14 @@
                 <i class="bx bxs-graduation"></i>
                 <h2>Education Background & Work Experience</h2>
 
-                <p class="about-desc">
+                <p class="about-desc th">
+                    ปริญญาตรี สาขาวิศวกรรมไฟฟ้า มหาวิทยาลัยเกษตรศาสตร์ (2015–2019)
+                    <br>เจ้าหน้าที่สำนักงาน (Office Staff), Winner Agro Innovation Co., Ltd. (2024–2025)
+                </p>
+
+                <p class="about-desc en">
                     Bachelor’s Degree in Electrical Engineering, Kasetsart University (2015–2019)
-                    · Office Staff, Winner Agro Innovation Co., Ltd. (2024–2025)
+                    <br>Office Staff, Winner Agro Innovation Co., Ltd. (2024–2025)
                 </p>
 
                 <details class="disclosure">
@@ -135,14 +166,27 @@
                         <span class="label-less">Read less</span>
                     </summary>
                     <div class="more-body">
-                        <p>
+                        <p class="th">
+                            <strong>Education</strong><br>
+                            • 2015–2019: ปริญญาตรี สาขาวิศวกรรมไฟฟ้า มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ
+                            จังหวัดสกลนคร<br>
+                            • 2012–2015: มัธยมศึกษาตอนปลาย (แผนการเรียน วิทย์–คณิต) โรงเรียนพังโคนวิทยาคม<br>
+                            • 2010–2012: มัธยมศึกษาตอนต้น โรงเรียนพังโคนวิทยาคม
+                        </p>
+                        <p class="en">
                             <strong>Education</strong><br>
                             • 2015–2019: Bachelor’s Degree in Electrical Engineering, Kasetsart University,
                             Chalermphrakiat Sakon Nakhon Campus<br>
                             • 2012–2015: High School (Science–Mathematics), Phang Khon Witthayakhom School<br>
                             • 2010–2012: Lower Secondary School, Phang Khon Witthayakhom School
                         </p>
-                        <p>
+                        <p class="th">
+                            <strong>Work Experience</strong><br>
+                            • 2024–2025: เจ้าหน้าที่สำนักงาน (Office Staff), บริษัท Winner Agro Innovation Co., Ltd.<br>
+                            • 2020–2024: ผู้จัดการโรงเรียน, โรงเรียนอุดมจิตวิทยา<br>
+                            • 2019–2020: บุคลากรทางการศึกษา, โรงเรียนอุดมจิตวิทยา
+                        </p>
+                        <p class="en">
                             <strong>Work Experience</strong><br>
                             • 2024–2025: Office Staff, Winner Agro Innovation Co., Ltd.<br>
                             • 2020–2024: School Manager, Udomjitwittaya School<br>
@@ -155,14 +199,22 @@
             <div class="about-card">
                 <i class="bx bxs-badge-check"></i>
                 <h2>Certificates</h2>
-                <p class="about-desc">Selected certifications and achievements.</p>
+                <p class="about-desc th">ประกาศนียบัตรและความสำเร็จที่คัดสรร</p>
+                <p class="about-desc en">Selected certifications and achievements.</p>
                 <details class="disclosure">
                     <summary class="btn-EB">
                         <span class="label-more">Read more</span>
                         <span class="label-less">Read less</span>
                     </summary>
                     <div class="more-body">
-                        <p>
+                        <p class="th">
+                            <strong>Certificates</strong><br>
+                            • ประกาศนียบัตรจาก borntodev – JavaScript<br>
+                            • ประกาศนียบัตรจาก borntodev – ChatGPT for Developers<br>
+                            • ประกาศนียบัตรจาก borntodev – Introduction to Computer Science<br>
+                            • ประกาศนียบัตรจาก borntodev – Lite Fundamental Web Dev with HTML5 & CSS3<br>
+                        </p>
+                        <p class="en">
                             <strong>Certificates</strong><br>
                             • borntodev certificate - JavaScript<br>
                             • borntodev certificate - ChatGPT for Developers<br>
@@ -176,7 +228,8 @@
             <div class="about-card">
                 <i class="bx bx-code-alt"></i>
                 <h2>Projects</h2>
-                <p class="about-desc">Recent work and case studies.</p>
+                <p class="about-desc th">ผลงานล่าสุด และกรณีศึกษา</p>
+                <p class="about-desc en"> Recent work and case studies.</p>
                 <details class="disclosure">
                     <summary class="btn-EB">
                         <span class="label-more">Read more</span>
@@ -185,13 +238,15 @@
                     <div class="more-body">
                         <ul>
                             <p><strong>Web Development Projects</strong></p>
-                            <a href="https://watchrapol.github.io/Sloth_Bar/">
-                                <li>Sloth Bar
+                            <a href="#projects">
+                                <li>Portfolio HTML/CSS/JS
                             </a></li>
-                            <a href="https://sites.google.com/ku.th/watcharapol-m">
+                            <a href="#projects">
+                                <li>Sloth Coffee Bar
+                            </a></li>
+                            <a href="#projects">
                                 <li>Portfolio sittes.google
                             </a></li>
-                            <li>Project C —</li>
                         </ul>
                     </div>
                 </details>
@@ -297,7 +352,19 @@
                 </a>
                 <div class="overlay">
                     <h3>AuyDev Portfolio (HTML/CSS/JS)</h3>
-                    <p>Hand-coded front-end พร้อม micro-interactions, IO, Lottie/Swiper</p>
+                    <p class="th">พอร์ตนี้ผมเขียนด้วยมือทั้งหน้าเพื่อโชว์สกิลพื้นฐานจริง ๆ: โครงสร้าง HTML semantic +
+                        CSS Grid/Flex
+                        และ JS ที่พอดีตัว พร้อม micro-interactions ที่ไม่กวนสายตา (IntersectionObserver คุมแอนิเมชันให้
+                        re-run เมื่อเลื่อนเข้า/ออก, Lottie ใน hero, Swiper ที่ตั้ง observer แก้ปัญหาขนาดเพี้ยน) โฟกัส
+                        performance/a11y เช่น lazy asset, สีคอนทราสต์, focus ring และโค้ดที่อ่านง่ายต่อยอดได้
+                    </p>
+                    <p class="en">This portfolio is hand-coded end to end to showcase real fundamentals: semantic HTML
+                        structure, CSS Grid/Flexbox, and just-enough JavaScript. It uses calm micro-interactions—an
+                        IntersectionObserver to re-run animations as sections enter/exit, a Lottie animation in the
+                        hero, and a Swiper carousel configured with observers to avoid sizing glitches. I focus on
+                        performance and a11y: lazy-loading assets, proper color contrast, visible focus rings, and
+                        clean, extensible code.
+                    </p>
                     <div class="actions">
                         <a class="btn" href="LIVE_LINK_1" target="_blank" rel="noopener">Live ↗</a>
                         <a class="btn" href="CODE_LINK_1" target="_blank" rel="noopener">Code</a>
@@ -312,7 +379,11 @@
                 </a>
                 <div class="overlay">
                     <h3>Sloth Bar Coffee</h3>
-                    <p>Single-page café landing — Hero → Menu → Review → Map (mobile-first)</p>
+                    <p class="th">แลนดิ้งเพจร้านกาแฟ โฟกัส mobile-first โฟลว์ Hero → เมนู → รีวิว → แผนที่ โหลดไว
+                        ใช้งานง่าย</p>
+                    <p class="en">Mobile-first café landing — Hero → Menu → Reviews → Map. Fast to load with clear CTAs.
+                    </p>
+
                     <div class="actions">
                         <a class="btn" href="https://watchrapol.github.io/Sloth_Bar/" target="_blank"
                             rel="noopener">Live ↗</a>
@@ -327,7 +398,16 @@
                 </a>
                 <div class="overlay">
                     <h3>Portfolio v1 (Google Sites)</h3>
-                    <p>ต้นแบบแนว content-first จัดโครงเนื้อหาเร็ว ใช้เป็นฐานเวอร์ชันโค้ด</p>
+                    <p class="th">เวอร์ชัน prototyping เชิงเนื้อหา—จัดลำดับข้อมูลและลิงก์ให้หาเจอง่าย เผยแพร่เร็ว
+                        เก็บฟีดแบ็กได้ไว
+                        ใช้เป็น baseline ก่อนย้ายมาเขียนโค้ดเต็ม (UI/animation/performance) ภายหลัง
+                        และยังเหมาะกับการอัปเดตเนื้อหาโดยไม่ต้องพึ่งนักพัฒนามาก
+                    </p>
+                    <p class="en">A content-first prototyping version—prioritizing clear information hierarchy and
+                        easy-to-find links. It publishes fast and collects feedback quickly, serving as a baseline
+                        before moving to a fully coded build (UI/animation/performance). It’s also well-suited for
+                        content updates with minimal developer involvement.
+                    </p>
                     <div class="actions">
                         <a class="btn" href="https://sites.google.com/ku.th/watcharapol-m" target="_blank"
                             rel="noopener">Live ↗</a>
@@ -346,7 +426,7 @@
             <!-- LEFT : Info -->
             <aside class="contact-info">
                 <div class="info-card">
-                    <h3>ติดต่อโดยตรง</h3>
+                    <h3>ติดต่อโดยตรง / Direct</h3>
                     <ul class="info-list">
                         <li>
                             <i class="bx bx-envelope"></i>
@@ -361,10 +441,11 @@
                     </ul>
 
                     <div class="socials">
-                        <a class="chip" href="https://github.com/yourname" target="_blank" rel="noopener">
+                        <a class="chip" href="https://github.com/Watchrapol" target="_blank" rel="noopener">
                             <i class="bx bxl-github"></i> GitHub
                         </a>
-                        <a class="chip" href="https://www.linkedin.com/in/watcharapol-mattayatsuk-57503b383/" target="_blank" rel="noopener">
+                        <a class="chip" href="https://www.linkedin.com/in/watcharapol-mattayatsuk-57503b383/"
+                            target="_blank" rel="noopener">
                             <i class="bx bxl-linkedin"></i> LinkedIn
                         </a>
                         <a class="chip" href="https://sites.google.com/ku.th/watcharapol-m" target="_blank"
@@ -391,25 +472,25 @@
             <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
                 <!-- ใส่ Formspree ID หรือเปลี่ยนตามบริการที่ใช้ -->
                 <div class="field">
-                    <label for="name">ชื่อของคุณ</label>
+                    <label for="name">ชื่อ / Name</label>
                     <input id="name" name="name" type="text" placeholder="เช่น Watcharapol" required>
                 </div>
 
                 <div class="field">
-                    <label for="email">อีเมลสำหรับติดต่อกลับ</label>
+                    <label for="email">อีเมล / Email</label>
                     <input id="email" name="email" type="email" placeholder="you@email.com" required>
                 </div>
 
                 <div class="field">
-                    <label for="subject">หัวข้อ</label>
+                    <label for="subject">หัวข้อ / Subject</label>
                     <input id="subject" name="subject" type="text"
-                        placeholder="เรื่องที่อยากคุย (เช่น สอบถามทำเว็บไซต์)">
+                        placeholder="เช่น สอบถามทำเว็บไซต์ / e.g., Website inquiry">
                 </div>
 
                 <div class="field">
-                    <label for="message">ข้อความ</label>
-                    <textarea id="message" name="message" rows="6" placeholder="เล่ารายละเอียดคร่าว ๆ ได้เลยครับ"
-                        required></textarea>
+                    <label for="message">ข้อความ / Message</label>
+                    <textarea id="message" name="message" rows="6"
+                        placeholder="เล่ารายละเอียดคร่าว ๆ ได้เลยครับ (งบ/เส้นตาย/ตัวอย่างเว็บที่ชอบ).    /Feel free to share brief details (budget/deadline/example sites you like)." required></textarea>
                 </div>
 
                 <div class="form-actions">
