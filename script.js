@@ -108,3 +108,60 @@ const sw = new Swiper('.mySwiper', {
     });
   });
 })();
+
+/*/////////////////////////////////////////////////////////////////*/
+// ===== Copy email =====
+document.querySelectorAll('.copy-email').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const email = btn.dataset.copy || 'you@example.com';
+    try{
+      await navigator.clipboard.writeText(email);
+      const prev = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(()=> btn.textContent = prev, 1200);
+    }catch(e){
+      btn.textContent = 'Copy failed';
+      setTimeout(()=> btn.textContent = 'Copy', 1200);
+    }
+  });
+});
+
+// ===== Mailto fallback =====
+document.getElementById('mailtoBtn')?.addEventListener('click', () => {
+  const name = encodeURIComponent(document.getElementById('name').value.trim());
+  const email = encodeURIComponent(document.getElementById('email').value.trim());
+  const subject = encodeURIComponent(document.getElementById('subject').value.trim() || 'Hello Auy');
+  const message = encodeURIComponent(document.getElementById('message').value.trim());
+
+  const body = `From: ${name} (${email})%0A%0A${message}`;
+  const mailto = `mailto:you@example.com?subject=${subject}&body=${body}`;
+  window.location.href = mailto;
+});
+
+// ===== Formspree submit (AJAX) =====
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formStatus.textContent = 'Sending...';
+
+    const formData = new FormData(contactForm);
+    try{
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      if (res.ok) {
+        formStatus.textContent = 'ขอบคุณครับ! ผมได้รับข้อความแล้ว';
+        contactForm.reset();
+      } else {
+        formStatus.textContent = 'ส่งไม่สำเร็จ ลองส่งผ่านอีเมลแทนได้ครับ';
+      }
+    }catch(err){
+      formStatus.textContent = 'เครือข่ายมีปัญหา ลองอีกครั้งหรือส่งอีเมลแทน';
+    }
+  });
+}

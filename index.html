@@ -61,7 +61,6 @@
         </div>
     </section>
 
-
     <h1 class="sub-title rerun" id="about">About<span class="gradient-text">Me</span></h1>
     <section class="about">
         <div class="about-content">
@@ -200,12 +199,13 @@
         </div>
     </section>
 
-    <h1 class="sub-title rerun">My<span class="gradient-text"> skills</span></h1>
+    <h1 class="sub-title rerun">My<span class="gradient-text">Skills</span></h1>
     <section>
         <div class="container-skills">
             <h1 class="heading1">Technical Skills</h1>
             <div class="Tecnical-bars">
-                <div class="bar"><i class="bx bxl-html5"></i>
+                <div class="bar">
+                    <i1 class="bx bxl-html5"></i1>
                     <div class="info">
                         <span>HTML</span>
                     </div>
@@ -213,7 +213,8 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="bar"><i class="bx bxl-css3"></i>
+                <div class="bar">
+                    <i2 class="bx bxl-css3"></i2>
                     <div class="info">
                         <span>CSS</span>
                     </div>
@@ -221,7 +222,8 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="bar"><i class="bx bxl-javascript"></i>
+                <div class="bar">
+                    <i3 class="bx bxl-javascript"></i3>
                     <div class="info">
                         <span>JavaScript</span>
                     </div>
@@ -229,7 +231,8 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="bar"><i class="bx bxl-python"></i>
+                <div class="bar">
+                    <i4 class="bx bxl-python"></i4>
                     <div class="info">
                         <span>Python</span>
                     </div>
@@ -249,7 +252,7 @@
                         <circle class="progress-bar rerun" cx="100" cy="100" r="80"></circle>
                         <circle class="path path-1 rerun" cx="100" cy="100" r="80"></circle>
                     </svg>
-                    <div class="percentage">90%</div>
+                    <div class="percentage">80%</div>
                     <div class="text">creativity</div>
                 </div>
                 <div class="radial-bar">
@@ -281,22 +284,148 @@
         </div>
 
     </section>
+    <div class="spacer-viewport"></div>
 
 
     <h1 class="sub-title rerun" id="projects">My<span class="gradient-text">Portfolio</span></h1>
+    <section id="projects" class="portfolio overlay-cards">
+        <div class="overlay-grid">
+            <!-- 1) พอร์ตนี้ (หลัก) -->
+            <article class="zoom-card featured">
+                <a class="media" href="LIVE_LINK_1" target="_blank" rel="noopener">
+                    <img src="images/Portfolio-html-css-Js.png" alt="AuyDev Portfolio (HTML/CSS/JS)">
+                </a>
+                <div class="overlay">
+                    <h3>AuyDev Portfolio (HTML/CSS/JS)</h3>
+                    <p>Hand-coded front-end พร้อม micro-interactions, IO, Lottie/Swiper</p>
+                    <div class="actions">
+                        <a class="btn" href="LIVE_LINK_1" target="_blank" rel="noopener">Live ↗</a>
+                        <a class="btn" href="CODE_LINK_1" target="_blank" rel="noopener">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2) Sloth Bar Coffee -->
+            <article class="zoom-card">
+                <a class="media" href="https://watchrapol.github.io/Sloth_Bar/" target="_blank" rel="noopener">
+                    <img src="images/Sloth bar.png" alt="Sloth Bar Coffee Landing Page">
+                </a>
+                <div class="overlay">
+                    <h3>Sloth Bar Coffee</h3>
+                    <p>Single-page café landing — Hero → Menu → Review → Map (mobile-first)</p>
+                    <div class="actions">
+                        <a class="btn" href="https://watchrapol.github.io/Sloth_Bar/" target="_blank"
+                            rel="noopener">Live ↗</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3) Portfolio v1 (Google Sites) -->
+            <article class="zoom-card">
+                <a class="media" href="https://sites.google.com/ku.th/watcharapol-m" target="_blank" rel="noopener">
+                    <img src="images/Portfolio-site.png" alt="Portfolio v1 on Google Sites">
+                </a>
+                <div class="overlay">
+                    <h3>Portfolio v1 (Google Sites)</h3>
+                    <p>ต้นแบบแนว content-first จัดโครงเนื้อหาเร็ว ใช้เป็นฐานเวอร์ชันโค้ด</p>
+                    <div class="actions">
+                        <a class="btn" href="https://sites.google.com/ku.th/watcharapol-m" target="_blank"
+                            rel="noopener">Live ↗</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <div class="spacer-viewport"></div>
+
 
     <h1 class="sub-title rerun" id="contact">My<span class="gradient-text">Contact</span></h1>
-    <div>
-        <p class="muted">อีเมล: you@example.com · LinkedIn/GitHub</p>
-    </div>
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="contact-section overlay-cards">
+        <div class="contact-grid">
+            <!-- LEFT : Info -->
+            <aside class="contact-info">
+                <div class="info-card">
+                    <h3>ติดต่อโดยตรง</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="bx bx-envelope"></i>
+                            <a id="mailtoLink"
+                                href="mailto:you@example.com?subject=Hello%20Auy&body=Hi%20Auy%2C%0A">watcharapol.m@ku.th</a>
+                            <button class="chip copy-email" type="button" data-copy="you@example.com">Copy</button>
+                        </li>
+                        <li>
+                            <i class="bx bx-map"></i>
+                            <span>Thailand (UTC+7)</span>
+                        </li>
+                    </ul>
 
+                    <div class="socials">
+                        <a class="chip" href="https://github.com/yourname" target="_blank" rel="noopener">
+                            <i class="bx bxl-github"></i> GitHub
+                        </a>
+                        <a class="chip" href="https://www.linkedin.com/in/watcharapol-mattayatsuk-57503b383/" target="_blank" rel="noopener">
+                            <i class="bx bxl-linkedin"></i> LinkedIn
+                        </a>
+                        <a class="chip" href="https://sites.google.com/ku.th/watcharapol-m" target="_blank"
+                            rel="noopener">
+                            <i class="bx bx-globe"></i> Portfolio v1
+                        </a>
+                    </div>
 
+                    <div class="tiny-note">
+                        * เวลาตอบปกติ: 10:00–20:00 น. (UTC+7)
+                    </div>
+                </div>
 
+                <!-- ใส่ลูป Lottie (ออปชัน) -->
+                <div class="contact-visual">
+                    <dotlottie-wc src="https://lottie.host/262b5295-044a-41bc-beef-775da248c08f/A8k4eBKAf5.lottie"
+                        speed="1" autoplay loop aria-label="decorative animation">
+                    </dotlottie-wc>
+                </div>
+            </aside>
+
+            <!-- RIGHT : Form -->
+            <!-- วิธีส่ง 2 แบบ: (A) Formspree/บริการฟอร์ม หรือ (B) mailto fallback -->
+            <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                <!-- ใส่ Formspree ID หรือเปลี่ยนตามบริการที่ใช้ -->
+                <div class="field">
+                    <label for="name">ชื่อของคุณ</label>
+                    <input id="name" name="name" type="text" placeholder="เช่น Watcharapol" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">อีเมลสำหรับติดต่อกลับ</label>
+                    <input id="email" name="email" type="email" placeholder="you@email.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="subject">หัวข้อ</label>
+                    <input id="subject" name="subject" type="text"
+                        placeholder="เรื่องที่อยากคุย (เช่น สอบถามทำเว็บไซต์)">
+                </div>
+
+                <div class="field">
+                    <label for="message">ข้อความ</label>
+                    <textarea id="message" name="message" rows="6" placeholder="เล่ารายละเอียดคร่าว ๆ ได้เลยครับ"
+                        required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn" type="submit">Send message</button>
+                    <button class="btn outline" type="button" id="mailtoBtn">Send via email</button>
+                </div>
+
+                <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
 
 
 
     <footer>
-        <p>&copy; 2025 Watcharapol</p>
+        <p class="footer rerun">&copy; 2025 Watcharapol</span></p>
     </footer>
 
 </body>
