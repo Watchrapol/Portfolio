@@ -22,22 +22,29 @@ sections.forEach(sec => io.observe(sec));
 ///////////////////////////////////////////////////////////////////////////////about-card///////////////////////////////////////////////
 const sw = new Swiper('.mySwiper', {
   loop: true,
-  centeredSlides: true,        // การ์ดกลางอยู่ตรงกลาง
-  slidesPerView: 'auto',       // ใช้ความกว้างจาก CSS ของ .swiper-slide
-  spaceBetween: 24,            // ระยะห่างการ์ด
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  spaceBetween: 24,
   grabCursor: true,
   effect: 'coverflow',
-  coverflowEffect: {
-    rotate: 0,                 // หมุนข้าง ๆ (0 = ไม่หมุน)
-    stretch: 0,                // ยืดเข้าออก
-    depth: 120,                // ระยะลึก (perspective)
-    modifier: 1,
-    slideShadows: false
-  },
+  coverflowEffect: { rotate: 0, stretch: 0, depth: 120, modifier: 1, slideShadows: false },
+
+  // ✅ แก้เคสดับ/เพี้ยนเมื่ออยู่ใน flex/grid, ซ่อน/แสดง, หรือปรับขนาด
+  observer: true,
+  observeParents: true,
+  resizeObserver: true,
+  updateOnWindowResize: true,
+
   autoplay: { delay: 3000, disableOnInteraction: false },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
   pagination: { el: '.swiper-pagination', clickable: true },
+
+  // ✅ ทำให้มือถือไม่บีบเล็กเกินไป
+  breakpoints: {
+    0:   { slidesPerView: 1.15, spaceBetween: 12, coverflowEffect: { depth: 80 } },
+    640: { slidesPerView: 'auto', spaceBetween: 24, coverflowEffect: { depth: 120 } },
+  }
 });
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 🔁 Restart animations for every section on enter
 (() => {
