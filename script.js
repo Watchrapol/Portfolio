@@ -38,11 +38,6 @@ const sw = new Swiper('.mySwiper', {
   autoplay: { delay: 3000, disableOnInteraction: false },
   pagination: { el: '.swiper-pagination', clickable: true },
 
-  // ✅ ทำให้มือถือไม่บีบเล็กเกินไป
-  breakpoints: {
-    0:   { slidesPerView: 1.15, spaceBetween: 12, coverflowEffect: { depth: 80 } },
-    640: { slidesPerView: 'auto', spaceBetween: 24, coverflowEffect: { depth: 120 } },
-  }
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
