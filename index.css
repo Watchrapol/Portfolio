@@ -38,20 +38,28 @@ section {
 }
 
 /* ให้ header ติดบนสุด */
-header {
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-}
-
+header { position: relative; z-index: 1000; }
+:root { --nav-h: 64px; }           /* ปรับตามความจริงของแถบเมนู */
 /* ========== Navbar (sticky + active) ========== */
 .navbar {
+	position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1100;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 18px 60px;
 	background: #0d0b1e;
 	transition: background .25s, box-shadow .25s, backdrop-filter .25s;
+}
+body{ padding-top: var(--nav-h); }
+
+/* 5) เวลา jump ด้วย anchor (#about ฯลฯ) ไม่โดนเมนูบัง */
+section{ scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+/* 6) มือถือ navbar มักเตี้ยลงหน่อย ก็ลดตัวแปรได้ */
+@media (max-width: 768px){
+  :root{ --nav-h: 56px; }
 }
 
 body.scrolled .navbar {
@@ -873,26 +881,28 @@ dotlottie-wc {
 }
 
 /* ซ่อน overlay บนจอที่ไม่มี hover (เช่น มือถือ) */
-@media (hover:none){
-  .zoom-card .overlay{
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-  }
-  /* โชว์เมื่อมีคลาส .is-open */
-  .zoom-card.is-open .overlay{
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
+@media (hover:none) {
+	.zoom-card .overlay {
+		opacity: 0;
+		transform: translateY(10px);
+		pointer-events: none;
+	}
+
+	/* โชว์เมื่อมีคลาส .is-open */
+	.zoom-card.is-open .overlay {
+		opacity: 1;
+		transform: none;
+		pointer-events: auto;
+	}
 }
+
 /* เผื่อเดสก์ท็อป: hover/focus ยังใช้งานได้ปกติ */
 .zoom-card:hover .overlay,
 .zoom-card:focus-within .overlay,
-.zoom-card.is-open .overlay{
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
+.zoom-card.is-open .overlay {
+	opacity: 1;
+	transform: none;
+	pointer-events: auto;
 }
 
 
@@ -1330,7 +1340,10 @@ body[data-lang="en"] .lang-toggle.segmented::before {
 	.about {
 		padding: 72px 48px;
 	}
-	.about-list{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+	.about-list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 /* มือถือ */
@@ -1397,15 +1410,17 @@ body[data-lang="en"] .lang-toggle.segmented::before {
 	dotlottie-wc {
 		width: clamp(220px, 70vw, 380px);
 	}
-	.about-list{
-    grid-template-columns: 1fr;
-    margin: 16px auto 48px;
-    padding: 16px;
-  }
-  .about-card{
-    border-radius: 18px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.35);
-  }
+
+	.about-list {
+		grid-template-columns: 1fr;
+		margin: 16px auto 48px;
+		padding: 16px;
+	}
+
+	.about-card {
+		border-radius: 18px;
+		box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+	}
 
 	/* ===== Swiper container ภายใต้ flex/grid ต้อง set min-width:0 ===== */
 	.center-stage {
@@ -1449,5 +1464,10 @@ body[data-lang="en"] .lang-toggle.segmented::before {
 		animation: typing 3s steps(16, end) forwards, blink .8s infinite;
 	}
 }
+
 /* กันแนวนอนล้น (เงาเรืองแสงชอบทำให้คิดว่าล้น) */
-html, body { max-width:100%; overflow-x:hidden; }
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
