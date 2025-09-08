@@ -176,3 +176,15 @@ document.getElementById('langToggle')?.addEventListener('click', () => {
   root.dataset.lang = root.dataset.lang === 'th' ? 'en' : 'th';
   localStorage.setItem('lang', root.dataset.lang);
 });
+/*///////////////////////////////////////////*/
+// ปีปัจจุบัน + ปุ่ม Back to top
+(() => {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.back-to-top').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+})();
