@@ -470,6 +470,12 @@ dotlottie-wc {
 .bar i4 {
 	color: rgb(210, 48, 250);
 }
+.bar i5 {
+	color: rgb(65, 224, 203);
+}
+.bar i6 {
+	color: rgb(206, 36, 6);
+}
 
 .Tecnical-bars .bar:first-child {
 	margin-top: 0;
@@ -534,6 +540,14 @@ dotlottie-wc {
 	width: 20%;
 }
 
+.progress-line.arduino span {
+	width: 80%;
+}
+
+.progress-line.cad span {
+	width: 75%;
+}
+
 .progress-line span::after {
 	position: absolute;
 	padding: 1px 8px;
@@ -561,6 +575,12 @@ dotlottie-wc {
 
 .progress-line.python span::after {
 	content: "20%";
+}
+.progress-line.arduino span::after {
+	content: "80%";
+}
+.progress-line.cad span::after {
+	content: "75%";
 }
 
 .progress-line span::before {
